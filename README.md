@@ -1,8 +1,8 @@
 # GEORGE-FLOROS-GR-Arma3-Scripts
  George Floros GR Scripts
-
+<div style="text-align:center">
 ![image](https://user-images.githubusercontent.com/21357927/126037142-a58f93ed-fae2-4bf2-a97f-ed1b39606247.png)
-
+</div>
 George Floros has a huge compilation of Arma3 scripts that disappeared when armaholic died. 
 Gerorge helped me with Arma3 scripting and it would be a shame if the scripts go to waste.
 
