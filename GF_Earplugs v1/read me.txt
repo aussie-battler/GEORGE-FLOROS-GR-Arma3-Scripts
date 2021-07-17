@@ -1,0 +1,3 @@
+put this in init.sqf
+
+[] execVM "GF_Earplugs\GF_Earplugs.sqf";

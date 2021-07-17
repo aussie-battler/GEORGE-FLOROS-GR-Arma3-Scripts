@@ -1,0 +1,28 @@
+
+
+
+//________________	Select the spawn Position	________________
+/*
+//________________	To use this add	________________
+GF_Missions_pos = [] call GF_Missions_Pos_isFlatEmpty;	
+
+//________________	There is a test spawn inside the script	________________
+//________________	uncomment and use ex : 	________________ 
+[]spawn GF_Missions_Pos_isFlatEmpty;
+
+GF_Missions_Pos_isEmpty
+GF_Missions_Pos_isFlat
+GF_Missions_Pos_isFlatEmpty
+GF_Missions_Pos_Airport_Tanoa_Only
+GF_Missions_Pos_Hill
+GF_Missions_Pos_Mount
+GF_Missions_Pos_NameCity
+GF_Missions_Pos_NameCityCapital
+GF_Missions_Pos_NameLocal
+GF_Missions_Pos_NameMarine
+GF_Missions_Pos_NameVillage
+GF_Missions_Pos_Residential
+GF_Missions_Pos_ShoreLine_Shore
+GF_Missions_Pos_ShoreLine_Water
+GF_Missions_Pos_Water
+*/

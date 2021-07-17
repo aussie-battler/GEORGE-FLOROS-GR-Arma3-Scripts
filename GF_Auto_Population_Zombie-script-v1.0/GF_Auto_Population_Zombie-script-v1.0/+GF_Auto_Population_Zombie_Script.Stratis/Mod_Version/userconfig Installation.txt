@@ -1,0 +1,4 @@
+userconfig Installation :
+
+Place the "userconfig" folder into your Arma 3 main folder.
+You may already have "userconfig" folder from other addons and/or mods in which case it is safe to merge the contents from this archive.

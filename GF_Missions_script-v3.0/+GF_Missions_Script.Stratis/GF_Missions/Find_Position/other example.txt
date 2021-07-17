@@ -1,0 +1,21 @@
+//________________ The Spawn position of the mission	________________
+////////////////////////////////////////////////////////////////////////
+/*
+//	1.For test purpose
+//	GF_Missions_pos = getPos player;    
+
+//  2.For total random location		
+//	GF_Missions_pos = [] call BIS_fnc_randomPos; 
+
+//	3.Create a Marker if you want a certain location 
+//	GF_Missions_pos = getmarkerPos "MarkerName_1"; 
+
+//	4.Select a random marker , copy this inside the mission that you want to suffle the markers 
+	_Marker_array =selectRandom[    
+            "MarkerName_1",        
+            "MarkerName_2",
+			"MarkerName_3"			
+            ];			
+//	GF_Missions_pos = getmarkerPos _Marker_array;
+*/
+////////////////////////////////////////////////////////////////////////

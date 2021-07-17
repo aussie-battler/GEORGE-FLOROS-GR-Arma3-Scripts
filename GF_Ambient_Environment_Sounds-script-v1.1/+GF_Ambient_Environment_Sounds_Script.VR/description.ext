@@ -1,0 +1,196 @@
+﻿
+
+
+//________________  Author : GEORGE FLOROS [GR] ___________ 09.12.18 _____________
+
+/*
+________________ GF Ambient Environment Sounds Script ________________
+
+https://forums.bohemia.net/forums/topic/219857-gf-ambient-environment-sounds-script/
+
+Please keep the Credits or add them to your Diary
+
+https://community.bistudio.com/wiki/SQF_syntax
+Don't try to open this with the simple notepad.
+For everything that is with comment  //  in front  or between /*
+means that it is disabled , so there is no need to delete the extra lines.
+
+You can open this ex:
+with notepad++
+https://notepad-plus-plus.org/
+
+and also use the extra pluggins
+(this way will be better , it will give also some certain colours to be able to detect ex. problems )
+http://www.armaholic.com/page.php?id=8680
+
+or use any other program for editing .
+
+For the Compilation List of my GF Scripts , you can search in:
+https://forums.bohemia.net/forums/topic/215850-compilation-list-of-my-gf-scripts/
+*/
+
+
+respawn = 3;				  // 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_INDEPENDENT marker. 4 = respawn with team, or bird. 5 = into AI or bird.
+respawndelay = 10;            // Delay prior to respawn
+respawnVehicleDelay = 0;      // Delay prior to respawn
+respawnDialog = 0;            // default = 1. show respawn timer and scoreboard when killed.
+respawnOnStart = -1;
+enableDebugConsole = 1;	      // 0 = disabled. 1 = admins, 2 = everybody. 0 is recommended in MP.
+allowFunctionsLog = 1;
+disabledAI=1;				  // No AI in playable units
+aiKills = 0;				  // disable scorelist for AI players
+forceRotorLibSimulation = 0;  // Default value: 0 - options based; 1 - force enable; 2 - force disable
+
+//____________________________________________________
+
+corpseManagerMode = 1;
+corpseLimit = 60;
+corpseRemovalMinTime = 900;
+corpseRemovalMaxTime = 1500;
+
+wreckManagerMode = 1;
+wreckLimit = 30;
+wreckRemovalMinTime = 900;
+wreckRemovalMaxTime = 1500;
+
+//____________________________________________________
+
+author = "    G E O R G E    F L O R O S    [ G R ]";
+OnLoadName = "GF Ambient Environment Sounds Script";	
+onLoadMission = "<t color='#FF0000'>V e r s i o n    1 . 1<br /><t color='#FCEF06'>Have Fun";
+loadScreen =  "";
+overviewPicture = "";
+
+//____________________________________________________
+
+class Header
+{
+ gameType = COOP;
+ minPlayers = 1;
+ maxPlayers = 40;
+};
+
+//__________________________ ***  C O P Y   T H I S  *** __________________________
+
+class CfgSounds
+{
+	sounds[] = {};
+		
+	//adjust the volume from db0
+	
+	//__________________________ GF Ambient Environment Sounds Script __________________________
+	
+	//__________________________	Birds_day	__________________________
+	
+	class Birds_day_1{name = "Birds_day_1";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_1.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_2{name = "Birds_day_2";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_2.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_3{name = "Birds_day_3";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_3.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_4{name = "Birds_day_4";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_4.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_5{name = "Birds_day_5";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_5.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_6{name = "Birds_day_6";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_6.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_7{name = "Birds_day_7";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_7.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_8{name = "Birds_day_8";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_8.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_9{name = "Birds_day_9";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_9.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_10{name = "Birds_day_10";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_10.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_11{name = "Birds_day_11";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_11.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_12{name = "Birds_day_12";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_12.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_13{name = "Birds_day_13";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_13.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_14{name = "Birds_day_14";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_14.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_15{name = "Birds_day_15";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_15.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_16{name = "Birds_day_16";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_16.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_17{name = "Birds_day_17";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_17.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_18{name = "Birds_day_18";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_18.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_19{name = "Birds_day_19";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_19.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_20{name = "Birds_day_20";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_20.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_21{name = "Birds_day_21";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_21.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_22{name = "Birds_day_22";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_22.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_23{name = "Birds_day_23";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_23.ogg", db0, 1.0};titles[] = {};};
+	class Birds_day_24{name = "Birds_day_24";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_day\Birds_day_24.ogg", db0, 1.0};titles[] = {};};
+	
+	
+	//__________________________	Birds_night	__________________________
+	
+	class Birds_night_1{name = "Birds_night_1";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_1.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_2{name = "Birds_night_2";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_2.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_3{name = "Birds_night_3";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_3.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_4{name = "Birds_night_4";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_4.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_5{name = "Birds_night_5";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_5.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_6{name = "Birds_night_6";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_6.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_7{name = "Birds_night_7";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_7.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_8{name = "Birds_night_8";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_8.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_9{name = "Birds_night_9";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_9.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_10{name = "Birds_night_10";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_10.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_11{name = "Birds_night_11";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_11.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_12{name = "Birds_night_12";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_12.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_13{name = "Birds_night_13";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_13.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_14{name = "Birds_night_14";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_14.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_15{name = "Birds_night_15";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_15.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_16{name = "Birds_night_16";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_16.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_17{name = "Birds_night_17";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_17.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_18{name = "Birds_night_18";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_18.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_19{name = "Birds_night_19";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_19.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_20{name = "Birds_night_20";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_20.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_21{name = "Birds_night_21";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_21.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_22{name = "Birds_night_22";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_22.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_23{name = "Birds_night_23";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_23.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_24{name = "Birds_night_24";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_24.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_25{name = "Birds_night_25";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_25.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_26{name = "Birds_night_26";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_26.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_27{name = "Birds_night_27";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_27.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_28{name = "Birds_night_28";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_28.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_29{name = "Birds_night_29";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_29.ogg", db0, 1.0};titles[] = {};};
+	class Birds_night_30{name = "Birds_night_30";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Birds_night\Birds_night_30.ogg", db0, 1.0};titles[] = {};};
+	
+	
+	//__________________________	Insects_day	__________________________
+	
+	class Insects_day_1{name = "Insects_day_1";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_day\Insects_day_1.ogg", db0, 1.0};titles[] = {};};
+	class Insects_day_2{name = "Insects_day_2";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_day\Insects_day_2.ogg", db0, 1.0};titles[] = {};};
+	class Insects_day_3{name = "Insects_day_3";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_day\Insects_day_3.ogg", db0, 1.0};titles[] = {};};
+	class Insects_day_4{name = "Insects_day_4";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_day\Insects_day_4.ogg", db0, 1.0};titles[] = {};};
+	class Insects_day_5{name = "Insects_day_5";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_day\Insects_day_5.ogg", db0, 1.0};titles[] = {};};
+	class Insects_day_6{name = "Insects_day_6";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_day\Insects_day_6.ogg", db0, 1.0};titles[] = {};};
+	class Insects_day_7{name = "Insects_day_7";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_day\Insects_day_7.ogg", db0, 1.0};titles[] = {};};
+	class Insects_day_8{name = "Insects_day_8";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_day\Insects_day_8.ogg", db0, 1.0};titles[] = {};};
+	class Insects_day_9{name = "Insects_day_9";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_day\Insects_day_9.ogg", db0, 1.0};titles[] = {};};
+	class Insects_day_10{name = "Insects_day_10";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_day\Insects_day_10.ogg", db0, 1.0};titles[] = {};};
+
+
+	//__________________________	Insects_night	__________________________
+	
+	class Insects_night_1{name = "Insects_night_1";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_night\Insects_night_1.ogg", db0, 1.0};titles[] = {};};
+	class Insects_night_2{name = "Insects_night_2";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_night\Insects_night_2.ogg", db0, 1.0};titles[] = {};};
+	class Insects_night_3{name = "Insects_night_3";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_night\Insects_night_3.ogg", db0, 1.0};titles[] = {};};
+	class Insects_night_4{name = "Insects_night_4";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_night\Insects_night_4.ogg", db0, 1.0};titles[] = {};};
+	class Insects_night_5{name = "Insects_night_5";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_night\Insects_night_5.ogg", db0, 1.0};titles[] = {};};
+	class Insects_night_6{name = "Insects_night_6";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_night\Insects_night_6.ogg", db0, 1.0};titles[] = {};};
+	class Insects_night_7{name = "Insects_night_7";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_night\Insects_night_7.ogg", db0, 1.0};titles[] = {};};
+	class Insects_night_8{name = "Insects_night_8";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_night\Insects_night_8.ogg", db0, 1.0};titles[] = {};};
+	class Insects_night_9{name = "Insects_night_9";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_night\Insects_night_9.ogg", db0, 1.0};titles[] = {};};
+	class Insects_night_10{name = "Insects_night_10";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_night\Insects_night_10.ogg", db0, 1.0};titles[] = {};};
+	class Insects_night_11{name = "Insects_night_11";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Insects_night\Insects_night_11.ogg", db0, 1.0};titles[] = {};};
+
+	
+	//__________________________	SFX_Forest	__________________________
+	
+	class Wood_1{name = "Wood_1";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\SFX_Forest\Wood_1.ogg", db-10, 1.0};titles[] = {};};
+	class Wood_2{name = "Wood_2";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\SFX_Forest\Wood_2.ogg", db-10, 1.0};titles[] = {};};
+	class Wood_3{name = "Wood_3";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\SFX_Forest\Wood_3.ogg", db-10, 1.0};titles[] = {};};
+	class Wood_4{name = "Wood_4";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\SFX_Forest\Wood_4.ogg", db-10, 1.0};titles[] = {};};
+	class Wood_5{name = "Wood_5";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\SFX_Forest\Wood_5.ogg", db-10, 1.0};titles[] = {};};
+	class Wood_6{name = "Wood_6";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\SFX_Forest\Wood_6.ogg", db-10, 1.0};titles[] = {};};
+	class Wood_7{name = "Wood_7";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\SFX_Forest\Wood_7.ogg", db-10, 1.0};titles[] = {};};
+
+
+	//__________________________	Wind	__________________________
+	
+	class Wind_Loop_1{name = "Wind_Loop_1";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Wind\Wind_Loop_1.ogg", db0, 1.0};titles[] = {};};
+	class Wind_Loop_2{name = "Wind_Loop_2";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Wind\Wind_Loop_2.ogg", db0, 1.0};titles[] = {};};
+	
+
+	//__________________________	Ambiance	__________________________
+	
+	class Ambiance_day_1{name = "Ambiance_day_1";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Ambiance\Ambiance_day_1.ogg", db+5, 1.0};titles[] = {};};	
+	class Ambiance_night_1{name = "Ambiance_night_1";sound[] = {"GF_Ambient_Environment_Sounds\Sounds\Ambiance\Ambiance_night_1.ogg", db+5, 1.0};titles[] = {};};
+			
+};		

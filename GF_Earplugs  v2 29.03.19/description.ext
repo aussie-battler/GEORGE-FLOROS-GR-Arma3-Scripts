@@ -1,0 +1,8 @@
+
+
+
+// GF Earplugs
+
+class RscTitles {
+	#include "GF_Earplugs\GF_Earplugs_HPP.hpp"	
+};
