@@ -1,0 +1,75 @@
+Informations :
+
+
+1. Units_Array.sqf , 
+in order to change the Units to Custom , for example : RHS ,
+
+you need to edit the Units_Array.sqf . The is a full list of possible units sorted , like infantry , reckon , SF , pilots, divers etc.
+Once you add your custom Units and you don't need to add everything , like you can only edit the divers for example and spawn only 
+divers and nothing more and in order to do this , ( -check below )
+
+
+2. GF_Auto_Population_Spawn_Settings.sqf ,
+these are the spawned desired Unit settings  ,
+
+you can select from the full list as it is , with the randomisation of the _case ( random ) number , up to which number of this list ,
+the cases for the spawns.
+This means that there are apparently exacly , 85 different cases , with the Sea spawns , else 77.
+
+You can edit this list by your neads.
+
+
+By saying , an example would be to spawn only , the( simple )  Infantry  for example and the Vehicles_Land
+
+example :
+
+_Spawn_List = selectrandom[
+
+
+	//____________________________	Units	____________________________
+	
+	//____________________________	Infantry_Man	____________________________
+	GF_AP_Spawn_Infantry_Man_Stalk,
+	GF_AP_Spawn_Infantry_Man_Patrol,
+	GF_AP_Spawn_Infantry_Defend,
+	GF_AP_Spawn_Infantry_Attack,
+	GF_AP_Garrison_Area_Buildings_Infantry,
+	
+	//____________________________	Vehicles	____________________________
+
+	//____________________________	Vehicles	____________________________	
+	GF_AP_Spawn_Vehicles_Land_Stalk,
+	GF_AP_Spawn_Vehicles_Land_Patrol,
+	GF_AP_Spawn_Vehicles_Land_Defend,
+	GF_AP_Spawn_Vehicles_Land_Attack
+	];
+
+
+
+
+3. GF_Auto_Population_Locations_Settings.sqf
+will select the desired spawn location ,
+
+there are a lot of possible selection and you can also randomize this , though, the best options are suggested inside and ther are also
+water positions available , but if the selected spawns are divers and boats , i have them by default to be spawn on water , 
+no mater the selected spawn position .
+
+
+4. GF_Auto_Population_Blacklist_Zone.sqf ,
+there are 5 blacklist zone added 
+
+and this will work by placing the included markers in the editor , but without changing the size of the markers , because the settings 
+for this are in the main settings.
+It is possible to edit this and add more zones and with their markers in the editor.
+In case that the Zones are not needed, they can be deleted from  the editor , without needed to get deleted in the .sqf .
+
+
+5. GF_Auto_Population_Main_Settings.sqf
+Here are the main settings ,
+
+and there are also incude the settings for the two extra scripts :
+
+GF_Auto_Random_Loadout Script
+GF_Units_Map_Markers_and_Symbols Script
+
+I think everything in the GF_Auto_Population_Main_Settings , is well commented and clear.

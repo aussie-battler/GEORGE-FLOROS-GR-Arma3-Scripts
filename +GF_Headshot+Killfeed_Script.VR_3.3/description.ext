@@ -1,0 +1,116 @@
+﻿
+
+
+//________________	Author : GEORGE FLOROS [GR]	___________	30.07.19	___________
+
+/*
+________________ GF Killfeed Script ________________
+
+https://forums.bohemia.net/forums/topic/206593-headshot-killfeed-script/
+
+Please keep the Credits or add them to your Diary
+
+https://community.bistudio.com/wiki/SQF_syntax
+Don't try to open this with the simple notepad.
+For everything that is with comment  //  in front  or between /*
+means that it is disabled , so there is no need to delete the extra lines.
+
+You can open this ex:
+with notepad++
+https://notepad-plus-plus.org/
+
+ArmA 3 | Notepad ++ SQF tutorial
+https://www.youtube.com/watch?v=aI5P7gp3x90
+
+and also use the extra pluggins
+(this way will be better , it will give also some certain colors to be able to detect ex. problems )
+http://www.armaholic.com/page.php?id=8680
+
+or use any other program for editing .
+
+For the Compilation List of my GF Scripts , you can search in:
+https://forums.bohemia.net/forums/topic/215850-compilation-list-of-my-gf-scripts/
+
+BI Forum Ravage Club Owner :
+https://forums.bohemia.net/clubs/73-bi-forum-ravage-club/
+*/
+
+
+//____________________________________________________
+
+respawn = 3;				  // 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_INDEPENDENT marker. 4 = respawn with team, or bird. 5 = into AI or bird.
+respawndelay = 10;            // Delay prior to respawn
+respawnVehicleDelay = 0;      // Delay prior to respawn
+respawnDialog = 0;            // default = 1. show respawn timer and scoreboard when killed.
+respawnOnStart = -1;
+enableDebugConsole = 1;	      // 0 = disabled. 1 = admins, 2 = everybody. 0 is recommended in MP.
+allowFunctionsLog = 1;
+disabledAI=0;				  // No AI in playable units
+aiKills = 0;				  // disable scorelist for AI players
+forceRotorLibSimulation = 0;  // Default value: 0 - options based; 1 - force enable; 2 - force disable
+
+//____________________________________________________
+
+corpseManagerMode = 1;		  // Type of removed bodies: 0 - none, 1 - all, 2 - only respawnable, 3 - only non-respawnable 
+corpseLimit = 60;			  // Max number of bodies which can be available at the same time. When exceeded, start deleting immediately 
+corpseRemovalMinTime = 900;	  // Minimal time in seconds a body stays in the scene (can't be removed sooner)
+corpseRemovalMaxTime = 1500;  // Maximal time in seconds after which a dead body is removed (can't stay longer) 
+
+wreckManagerMode = 1;		  // Type of removed wrecks: 0 - none, 1 - all, 2 - only respawnable, 3 - only non-respawnable 
+wreckLimit = 40;			  // Max number of wrecks which can be available at the same time. When exceeded, start deleting immediately. 
+wreckRemovalMinTime = 900;	  // Minimal time in seconds a wreck stays in the scene (can't be removed sooner). 
+wreckRemovalMaxTime = 1500;   // Maximal time in seconds after which a wreck is removed (can't stay longer)
+
+//____________________________________________________
+
+author = "    G E O R G E    F L O R O S    [ G R ]";
+OnLoadName = "Headshot + Killfeed Script";	
+onLoadMission = "<t color='#FF0000'>V e r s i o n    3 . 2<br /><t color='#FCEF06'>Have Fun";
+loadScreen =  "";
+overviewPicture = "";
+
+//____________________________________________________
+
+class Header{
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 40;
+};
+
+
+//__________________________ ***  C O P Y   T H I S  *** __________________________
+
+
+class CfgSounds{
+
+	sounds[] = {};
+
+	//adjust the volume from db0
+	
+	//__________________________ GF Killfeed __________________________
+	
+	class Killfeed_notification{name = "Killfeed_notification";sound[] = {"GF_Killfeed\Killfeed_Sounds\Killfeed_notification.ogg", db-5, 1.0};titles[] = {};};
+	
+	//__________________________ GF Headshot __________________________
+	
+	class Headshot_Blow_it_out_your_ass{name = "Headshot_Blow_it_out_your_ass";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Blow_it_out_your_ass.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Come_get_some{name = "Headshot_Come_get_some";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Come_get_some.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Come_on{name = "Headshot_Come_on";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Come_on.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Damn_i_m_good{name = "Headshot_Damn_i_m_good";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Damn_i_m_good.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Eat_shit_and_die{name = "Headshot_Eat_shit_and_die";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Eat_shit_and_die.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Game_over{name = "Headshot_Game_over";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Game_over.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Gotta_hurt{name = "Headshot_Gotta_hurt";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Gotta_hurt.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Holy_shit{name = "Headshot_Holy_shit";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Holy_shit.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_It_hurts_to_be_you{name = "Headshot_It_hurts_to_be_you";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_It_hurts_to_be_you.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_lets_rock{name = "Headshot_lets_rock";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_lets_rock.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Make_day{name = "Headshot_Make_day";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Make_day.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Mess{name = "Headshot_Mess";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Mess.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Ooooh_thats_gotta_hurt{name = "Headshot_Ooooh_thats_gotta_hurt";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Ooooh_thats_gotta_hurt.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_See_you_in_hell{name = "Headshot_See_you_in_hell";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_See_you_in_hell.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Shake_it_baby{name = "Headshot_Shake_it_baby";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Shake_it_baby.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Shit_happens{name = "Headshot_Shit_happens";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Shit_happens.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Terminated{name = "Headshot_Terminated";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Terminated.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Ugly{name = "Headshot_Ugly";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Ugly.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Wasted{name = "Headshot_Wasted";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Wasted.ogg", db0, 1.0};titles[] = {};};
+	class Headshot_Yippie_kaiay{name = "Headshot_Yippie_kaiay";sound[] = {"GF_Killfeed\Headshot_Sounds\Headshot_Yippie_kaiay.ogg", db0, 1.0};titles[] = {};};	
+};

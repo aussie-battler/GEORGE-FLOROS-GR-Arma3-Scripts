@@ -1,0 +1,20 @@
+
+
+
+//________________	GF_Missions_Intel	________________
+
+	Set the position inside the mission
+	define the pos
+	ex : GF_Missions_Intel_Pos = getpos player;
+	and to use this :
+	[] spawn GF_Missions_Intel;
+
+	
+
+	
+//________________	GF_Missions_Police_Offroad	________________
+
+_Offroad = "C_Offroad_01_white_F" createVehicle _Pos_1;
+
+GF_Missions_Police_Offroad_Pos = _Pos_1;
+_Offroad spawn GF_Missions_Police_Offroad;

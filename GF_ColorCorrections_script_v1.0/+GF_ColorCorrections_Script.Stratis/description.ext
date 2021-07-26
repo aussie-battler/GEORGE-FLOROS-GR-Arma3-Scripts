@@ -1,0 +1,124 @@
+﻿
+
+
+//________________  Author : GEORGE FLOROS [GR] ___________ 20.10.18 _____________
+
+/*
+________________ GF ColorCorrections Script ________________
+
+https://forums.bohemia.net/forums/topic/219908-gf-colorcorrections-script/
+
+Please keep the Credits or add them to your Diary
+
+https://community.bistudio.com/wiki/SQF_syntax
+Don't try to open this with the simple notepad.
+For everything that is with comment  //  in front  or between /*
+means that it is disabled , so there is no need to delete the extra lines.
+
+You can open this ex:
+with notepad++
+https://notepad-plus-plus.org/
+
+and also use the extra pluggins
+(this way will be better , it will give also some certain colours to be able to detect ex. problems )
+http://www.armaholic.com/page.php?id=8680
+
+or use any other program for editing .
+
+For the Compilation List of my GF Scripts , you can search in:
+https://forums.bohemia.net/forums/topic/215850-compilation-list-of-my-gf-scripts/
+*/
+
+
+respawn = 3;				  // 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_INDEPENDENT marker. 4 = respawn with team, or bird. 5 = into AI or bird.
+respawndelay = 10;            // Delay prior to respawn
+respawnVehicleDelay = 0;      // Delay prior to respawn
+respawnDialog = 0;            // default = 1. show respawn timer and scoreboard when killed.
+respawnOnStart = -1;
+enableDebugConsole = 1;	      // 0 = disabled. 1 = admins, 2 = everybody. 0 is recommended in MP.
+allowFunctionsLog = 1;
+disabledAI=1;				  // No AI in playable units
+aiKills = 0;				  // disable scorelist for AI players
+forceRotorLibSimulation = 0;  // Default value: 0 - options based; 1 - force enable; 2 - force disable
+
+//____________________________________________________
+
+corpseManagerMode = 1;
+corpseLimit = 60;
+corpseRemovalMinTime = 900;
+corpseRemovalMaxTime = 1500;
+
+wreckManagerMode = 1;
+wreckLimit = 30;
+wreckRemovalMinTime = 900;
+wreckRemovalMaxTime = 1500;
+
+//____________________________________________________
+
+author = "    G E O R G E    F L O R O S    [ G R ]";
+OnLoadName = "GF ColorCorrections Script";	
+onLoadMission = "<t color='#FF0000'>V e r s i o n    1 . 0<br /><t color='#FCEF06'>Have Fun";
+loadScreen =  "";
+overviewPicture = "";
+
+//____________________________________________________
+
+class Header
+{
+ gameType = COOP;
+ minPlayers = 1;
+ maxPlayers = 40;
+};
+
+
+
+//_________________________ If you want to add Mission Parameters ________________________
+
+//__________________________ ***  C O P Y   T H I S  *** __________________________
+
+//_________________________ Mission_Parameters ________________________
+
+
+/*
+Copy in the descripion.ext  :
+
+#include "Mission_Parameters.hpp"
+
+and add the Mission_Parameters.hpp in your mission files.
+
+ 
+
+Or copy , in your descripion.ext :
+
+class Params
+{
+		class GF_ColorCorrections
+	{
+		title = "Color Correction theme Selection:";
+		values[]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14};
+	    texts[]={
+		"Disabled",
+		"Realistic Color Correction theme",
+		"Post Apocalyptic theme",
+		"Nightstalkers theme",
+		"OFP Gamma theme",
+		"Golden autumn theme",
+		"Africa theme",
+		"Afghan theme",
+		"Middle East theme",
+		"Real Is Brown theme",
+		"Gray Tone theme",
+		"Cold Tone theme",
+		"Winter Blue theme",
+		"Winter White theme",
+		"Mediterranean theme"
+		};
+	   default=1;
+    };
+};
+	
+*/
+
+//__________________________ ***  C O P Y   T H I S  *** __________________________
+
+#include "Mission_Parameters.hpp"

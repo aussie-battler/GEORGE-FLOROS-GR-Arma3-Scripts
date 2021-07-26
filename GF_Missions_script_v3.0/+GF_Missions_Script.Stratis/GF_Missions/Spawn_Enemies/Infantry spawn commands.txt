@@ -1,0 +1,70 @@
+
+
+
+//________________	Infantry spawn commands	________________
+//________________	add this to use	________________
+
+//	to spawn more than one time you can use : 
+
+//________________ Spawn Number  ________________
+for "_i" from 0 to 4 do {
+[] spawn GF_Missions_Spawn_Infantry_Patrol;
+sleep 3;
+};
+
+
+//________________	Infantry	________________
+[] spawn GF_Missions_Spawn_Infantry_Patrol;
+[] spawn GF_Missions_Spawn_Infantry_Defend;
+[] spawn GF_Missions_Spawn_Infantry_Attack;
+[] spawn GF_Missions_Garison_The_Building_Infantry;
+[] spawn GF_Missions_Garison_Area_Buildings_Infantry;
+
+//________________	Infantry_Divers	________________
+[] spawn GF_Missions_Spawn_Infantry_Divers_Patrol;
+[] spawn GF_Missions_Spawn_Infantry_Divers_Defend;
+[] spawn GF_Missions_Spawn_Infantry_Divers_Attack;
+[] spawn GF_Missions_Garison_The_Building_Infantry_Divers;
+[] spawn GF_Missions_Garison_Area_Buildings_Infantry_Divers;
+
+//________________	Infantry_Paratroopers	________________
+[] spawn GF_Missions_Spawn_Infantry_Paratroopers_Patrol;
+[] spawn GF_Missions_Spawn_Infantry_Paratroopers_Defend;
+[] spawn GF_Missions_Spawn_Infantry_Paratroopers_Attack;
+[] spawn GF_Missions_Garison_The_Building_Infantry_Paratroopers;
+[] spawn GF_Missions_Garison_Area_Buildings_Infantry_Paratroopers;
+
+//________________	Infantry_Recon	________________
+[] spawn GF_Missions_Spawn_Infantry_Recon_Patrol;
+[] spawn GF_Missions_Spawn_Infantry_Recon_Defend;
+[] spawn GF_Missions_Spawn_Infantry_Recon_Attack;
+[] spawn GF_Missions_Garison_The_Building_Infantry_Recon;
+[] spawn GF_Missions_Garison_Area_Buildings_Infantry_Recon;
+
+//________________	Infantry_Recon_SF	________________
+[] spawn GF_Missions_Spawn_Infantry_Recon_SF_Patrol;
+[] spawn GF_Missions_Spawn_Infantry_Recon_SF_Defend;
+[] spawn GF_Missions_Spawn_Infantry_Recon_SF_Attack;
+[] spawn GF_Missions_Garison_The_Building_Infantry_Recon_SF;
+[] spawn GF_Missions_Garison_Area_Buildings_Infantry_Recon_SF;
+
+//________________	Infantry_SF	________________
+[] spawn GF_Missions_Spawn_Infantry_SF_Patrol;
+[] spawn GF_Missions_Spawn_Infantry_SF_Defend;
+[] spawn GF_Missions_Spawn_Infantry_SF_Attack;
+[] spawn GF_Missions_Garison_The_Building_Infantry_SF;
+[] spawn GF_Missions_Garison_Area_Buildings_Infantry_SF;
+
+//________________	Infantry_SF_Urban	________________
+[] spawn GF_Missions_Spawn_Infantry_SF_Urban_Patrol;
+[] spawn GF_Missions_Spawn_Infantry_SF_Urban_Defend;
+[] spawn GF_Missions_Spawn_Infantry_SF_Urban_Attack;
+[] spawn GF_Missions_Garison_The_Building_Infantry_SF_Urban;
+[] spawn GF_Missions_Garison_Area_Buildings_Infantry_SF_Urban;
+
+//________________	Infantry_Snipers	________________
+[] spawn GF_Missions_Spawn_Infantry_Snipers_Patrol;
+[] spawn GF_Missions_Spawn_Infantry_Snipers_Defend;
+[] spawn GF_Missions_Spawn_Infantry_Snipers_Attack;
+[] spawn GF_Missions_Garison_The_Building_Infantry_Snipers;
+[] spawn GF_Missions_Garison_Area_Buildings_Infantry_Snipers;

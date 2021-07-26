@@ -1,0 +1,19 @@
+
+
+
+adjust in the Mission_init.sqf :
+
+GF_Missions_Garison_Area_Possibility    = 25;					//	up to 100 %
+GF_Missions_Garison_Area_Distance 		= GF_Missions_EOS_Spawn_Distance / 2; 
+
+
+to use :
+
+add the name of the building 
+ex : 
+[_Building] spawn GF_Missions_Garison_The_Building_Infantry;
+
+
+garison the selected area
+ex :
+[] spawn GF_Missions_Garison_Area_Buildings_Infantry;

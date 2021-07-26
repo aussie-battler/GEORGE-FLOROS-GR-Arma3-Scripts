@@ -1,0 +1,41 @@
+
+
+
+//________________	Vehicles spawn commands	________________
+//________________	add this to use	________________
+
+to spawn more than one time you can use : 
+
+//________________ Spawn Number  ________________
+for "_i" from 0 to 4 do {
+[] spawn GF_Missions_Spawn_Armoured_Vehicles_Patrol;
+sleep 3;
+};
+
+//________________	Armoured_Vehicles	________________
+[] spawn GF_Missions_Spawn_Armoured_Vehicles_Patrol;
+[] spawn GF_Missions_Spawn_Armoured_Vehicles_Defend;
+[] spawn GF_Missions_Spawn_Armoured_Vehicles_Attack;
+
+//________________	Boats	________________
+[] spawn GF_Missions_Spawn_Boats_Patrol;
+[] spawn GF_Missions_Spawn_Boats_Defend;
+[] spawn GF_Missions_Spawn_Boats_Attack;
+
+//________________	Helicopters	________________
+[] spawn GF_Missions_Spawn_Helicopters_Patrol;
+[] spawn GF_Missions_Spawn_Helicopters_Defend;
+[] spawn GF_Missions_Spawn_Helicopters_Attack;
+
+//________________	Land_Vehicles	________________
+[] spawn GF_Missions_Spawn_Land_Vehicles_Patrol;
+[] spawn GF_Missions_Spawn_Land_Vehicles_Defend;
+[] spawn GF_Missions_Spawn_Land_Vehicles_Attack;
+
+//________________	Planes	________________
+[] spawn GF_Missions_Spawn_Planes_Patrol;
+[] spawn GF_Missions_Spawn_Planes_Defend;
+[] spawn GF_Missions_Spawn_Planes_Attack;
+
+//________________	Static_Weapons	________________
+[] spawn GF_Missions_Spawn_Static_Weapons;
