@@ -1,0 +1,93 @@
+﻿
+
+
+//________________  Author : [GR]GEORGE F ___________ 21.07.18 _____________
+
+/*
+________________ GF Custom Deathscreen Script ________________
+
+https://forums.bistudio.com/forums/topic/205897-custom-deathscreen-script/
+
+Please keep the Credits or add them to your Diary
+
+https://community.bistudio.com/wiki/SQF_syntax
+Don't try to open this with the simple notepad.
+For everything that is with comment  //  in front  or between /* 
+means that it is disabled , so there is no need to delete the extra lines. 
+
+You can open this ex:
+with notepad++
+https://notepad-plus-plus.org/
+
+and also use the extra pluggins
+(this way will be better , it will give also some certain colours to be able to detect ex. problems )
+http://www.armaholic.com/page.php?id=8680
+
+or use any other program for editing .
+
+For the Compilation List of my GF Scripts , you can search in:
+https://forums.bohemia.net/forums/topic/215850-compilation-list-of-my-gf-scripts/
+*/
+
+
+//____________________________________________________
+
+respawn = 3;				  // 0 = none. 1 = bird. 2 = instant where died. 3 = base or respawn_INDEPENDENT marker. 4 = respawn with team, or bird. 5 = into AI or bird.
+respawndelay = 10;            // Delay prior to respawn
+respawnVehicleDelay = 0;      // Delay prior to respawn
+respawnDialog = 0;            // default = 1. show respawn timer and scoreboard when killed.
+respawnOnStart = -1;
+enableDebugConsole = 1;	      // 0 = disabled. 1 = admins, 2 = everybody. 0 is recommended in MP.
+allowFunctionsLog = 1;
+disabledAI=1;				  // No AI in playable units
+aiKills = 0;				  // disable scorelist for AI players
+forceRotorLibSimulation = 0;  // Default value: 0 - options based; 1 - force enable; 2 - force disable
+
+//____________________________________________________
+
+corpseManagerMode = 1;
+corpseLimit = 60;
+corpseRemovalMinTime = 900;
+corpseRemovalMaxTime = 1500;
+
+wreckManagerMode = 1;
+wreckLimit = 30;
+wreckRemovalMinTime = 900;
+wreckRemovalMaxTime = 1500;
+
+//____________________________________________________
+
+author = "    G E O R G E    F L O R O S    [ G R ]";
+OnLoadName = "GF Custom Deathscreen Script";	
+onLoadMission = "<t color='#FF0000'>V e r s i o n    1 . 2<br /><t color='#FCEF06'>Have Fun";
+loadScreen =  "";
+overviewPicture = "";
+
+//____________________________________________________
+
+class Header
+{
+ gameType = COOP;
+ minPlayers = 1;
+ maxPlayers = 40;
+};
+
+
+//__________________________ ***  C O P Y   T H I S  *** __________________________
+
+class RscTitles
+{	
+	#include "GF_DeathScreen\GF_DeathScreen_rscTitles.hpp" 	 	
+};
+
+//____________________________________________________
+
+
+class CfgSounds
+{
+	sounds[] = {};
+		
+	//GF_DeathScreen
+	class Death_Blood_Splatter_SFX{name = "Death_Blood_Splatter_SFX";sound[] = {"GF_DeathScreen\Death_Blood_Splatter_SFX.ogg", db0, 1.0};titles[] = {};};
+	class Heart_Beat_dying{name = "Heart_Beat_dying";sound[] = {"GF_DeathScreen\Heart_Beat_dying.ogg", db0, 1.0};titles[] = {};};
+};
